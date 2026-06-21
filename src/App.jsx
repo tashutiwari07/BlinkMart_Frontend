@@ -1,18 +1,18 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'  
 import Header from './Components/Header'
-import Hero from './Components/Hero'
-import ProductCards from './Components/ProductCards'
 import Home from './Pages/Home'
-import TopProducts from './Components/TopProducts'
+import ProductDetails from './Pages/ProductDetails'
 
 export default function App() {
   return (
     <div>
       <Header/>
-      <Hero/>
-      <Home />
-      <TopProducts />
-      <ProductCards />
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/product/:id" element={<ProductDetails/>}/>
+        <Route path="*" element={<Home/>}/>
+      </Routes>
     </div>
   )
 }

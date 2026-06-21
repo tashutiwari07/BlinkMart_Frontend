@@ -1,95 +1,15 @@
-// import React from 'react'
-
-// export default function ProductCards() {
-
-//     const cards = [
-//   {
-//     id: 1,
-//     name: "Amul Taaza Milk",
-//     description:'sdfg erfgh ertyhj',
-//     amount: 34,
-//     image: amul,
-//     quantity:ml
-//   },
-
-//   {
-//     id: 2,
-//     name: "Brown Bread",
-//      description:'sdfg erfgh ertyhj',
-//     amount: 45,
-//     image: bread,
-//     quantity:g
-//   },
-
-//   {
-//     id: 3,
-//     name: "Farm Eggs",
-//      description:'sdfg erfgh ertyhj',
-//     amount: 90,
-//     image: eggs,
-//     quantity:dozen
-//   },
-//   {
-//     id: 4,
-//     name: "Butter",
-//      description:'sdfg erfgh ertyhj',
-//     amount: 60,
-//     image: butter,
-//     quantity:g
-//   },
-//   {
-//     id: 5,
-//     name: "Cheese Slice",
-//     description:'sdfg erfgh ertyhj',
-//     amount: 120,
-//     image: cheese,
-//     quantity:g
-//  },
-//  {
-//     id: 6,
-//     name: "Coca Cola",
-//      description:'sdfg erfgh ertyhj',
-//     amount: 40,
-//     image: cola,
-//     quantity:ml
-//   },
-// {
-//     id: 7,
-//     name: "Toothpaste",
-//      description:'sdfg erfgh ertyhj',
-//     amount: 120,
-//     image: paste,
-//   },
-// {
-//     id: 8,
-//     name: "Toothbrush",
-//     amount: 49,
-//  description:'sdfg erfgh ertyhj',
-//     image: brush,
-
-//   },
-// {
-//     id: 9,
-//     name: "White Cup",
-//     description:'sdfg erfgh ertyhj',
-//     amount: 125,
-//     image: cup,
-//   },
-
-
-
-// ];
-//   return (
-//     <div>
-      
-//     </div>
-//   )
-// }
-
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function ProductCards() {
+// const [count, setCount]= useState(0)
+
+// const handleCart =()=>{
+//     setCount(count+1)
+//     localStorage.setItem("cartCount",count+1)
+
+
   const cards = [
     {
       id: 1,
@@ -195,29 +115,32 @@ export default function ProductCards() {
 
 
         <div className="mb-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900">Popular Products</h2>
+          <h2 className="text-3xl font-bold text-gray-900">Products</h2>
           <p className="mt-3 text-gray-600">Choose fresh products at the best prices.</p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((card) => (
             <div key={card.id} className="overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-              <img className="h-52 w-full object-cover" src={card.image} alt={card.name} />
+              <Link to={`/product/${card.id}`}>
+                <img className="h-52 w-full object-cover" src={card.image} alt={card.name} />
 
-              <div className="p-5">
-                <div className="flex items-start justify-between gap-3">
-                  <h3 className="text-lg font-semibold text-gray-900">{card.name}</h3>
-                  <span className="rounded-md bg-green-100 px-2 py-1 text-sm font-semibold text-green-700">{card.quantity}</span>
+                <div className="p-5">
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="text-lg font-semibold text-gray-900">{card.name}</h3>
+                    <span className="rounded-md bg-green-100 px-2 py-1 text-sm font-semibold text-green-700">{card.quantity}</span>
+                  </div>
+
+                  <p className="mt-3 min-h-12 text-sm leading-6 text-gray-600">{card.description}</p>
+
+                  <p className="mt-5 text-xl font-bold text-gray-900">Rs. {card.amount}</p>
                 </div>
+              </Link>
 
-                <p className="mt-3 min-h-12 text-sm leading-6 text-gray-600">{card.description}</p>
-
-                <div className="mt-5 flex items-center justify-between">
-                  <p className="text-xl font-bold text-gray-900">₹{card.amount}</p>
-                  <button className="rounded-md bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-gray-700">
-                    Add to Cart
-                  </button>
-                </div>
+              <div className="px-5 pb-5">
+                <button onClick={(e) => { e.preventDefault(); }} className="w-full rounded-md bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-gray-700">
+                  Add to Cart
+                </button>
               </div>
             </div>
           ))}

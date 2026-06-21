@@ -17,12 +17,12 @@ export default function Header({ cartCount = 0 }) {
       <div className="mx-8 flex-1">
         <input
           type="text"
-          placeholder='Search "milk", "bread", "eggs"...'
+          placeholder='🔍Search "milk", "bread", "eggs"...'
           className="w-full rounded-lg border border-gray-300 bg-gray-50 p-3.5 text-[15px] outline-none focus:border-green-600"
         />
       </div>
 
-      <button className="mr-5 bg-white text-lg cursor-pointer">Login</button>
+      <button  className="cursor-pointer rounded-lg bg-blue-500 px-5 py-3 text-white m-3">Login</button>
 
       <button className="cursor-pointer rounded-lg bg-[#0c831f] px-5 py-3 text-white">
         🛒 Cart ({cartCount})

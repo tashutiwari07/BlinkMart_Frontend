@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 
@@ -38,8 +39,9 @@ export default function TopProducts() {
       image: 'https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&w=700&q=80',
     }
     ];
-  return (
-      <section className="bg-white px-6 py-14">
+
+      return (
+    <section className="bg-white px-6 py-14">
       <div className="mx-auto max-w-6xl">
 
 
@@ -48,9 +50,14 @@ export default function TopProducts() {
           <p className="mt-3 text-gray-600">Choose fresh products at the best prices.</p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {cards.map((card) => (
-            <div key={card.id} className="overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+        
+            <Link
+              key={card.id}
+              to={`/product/${card.id}`}
+              className="overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+            >
               <img className="h-52 w-full object-cover" src={card.image} alt={card.name} />
 
               <div className="p-5">
@@ -62,13 +69,13 @@ export default function TopProducts() {
                 <p className="mt-3 min-h-12 text-sm leading-6 text-gray-600">{card.description}</p>
 
                 <div className="mt-5 flex items-center justify-between">
-                  <p className="text-xl font-bold text-gray-900">₹{card.amount}</p>
+                  <p className="text-xl font-bold text-gray-900">Rs. {card.amount}</p>
                   <button className="rounded-md bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-gray-700">
                     Add to Cart
                   </button>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
