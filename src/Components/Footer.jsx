@@ -1,4 +1,3 @@
-import React from 'react'
 import facebook from "../assets/facebook.png";
 import twitter from "../assets/twiiter.png";
 import instagram from "../assets/instagram.png";
@@ -26,7 +25,7 @@ const usefulLinks3 = [
   "Recipes",
   "Bistro",
   "District",
-  "Blinkit Ambulance",
+  "BlinkMart Ambulance",
 ];
 
 const categories1 = [
@@ -190,7 +189,7 @@ export default function Footer() {
         {/* Disclaimer */}
         <div className="mt-8 text-gray-500 text-sm leading-7">
           <p>
-            “Blinkit” is owned & managed by
+            “BlinkMart” is owned & managed by
             "Blink Commerce Private Limited" and is not
             related, linked or interconnected in whatsoever
             manner or nature, to “GROFFR.COM” which is a

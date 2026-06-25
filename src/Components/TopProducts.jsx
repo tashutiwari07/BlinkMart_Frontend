@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 
@@ -50,12 +49,12 @@ export default function TopProducts() {
           <p className="mt-3 text-gray-600">Choose fresh products at the best prices.</p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((card) => (
         
             <Link
               key={card.id}
-              to={`/product/${card.id}`}
+              to={`/products/${card.id}`}
               className="overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
             >
               <img className="h-52 w-full object-cover" src={card.image} alt={card.name} />
@@ -82,3 +81,21 @@ export default function TopProducts() {
     </section>
   )
 }
+
+//  import React from 'react'
+// import ProductCards from './ProductCards'
+
+// export default function TopProducts() {
+//   return (
+//     <div>
+//       <div className="mb-8 text-center">
+//           <h2 className="text-3xl font-bold text-gray-900">Top Fresh Products</h2>
+//           <p className="mt-3 text-gray-600">Choose fresh products at the best prices.</p>
+//         </div>
+//     <ProductCards/>
+
+
+
+//     </div>
+//   )
+// }
