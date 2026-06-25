@@ -5,7 +5,7 @@ import { MdLockOutline, MdPayment } from 'react-icons/md';
 import useCart from '../hooks/useCart';
 
 const CHECKOUT_STORAGE_KEY = 'blinkit_checkout';
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://blinkmartbackend-production.up.railway.app';
 const RAZORPAY_KEY_ID = import.meta.env.VITE_RAZORPAY_KEY_ID || '';
 const RAZORPAY_MODE = import.meta.env.VITE_RAZORPAY_MODE || 'test';
 const RAZORPAY_ENABLED = import.meta.env.VITE_RAZORPAY_ENABLED === 'true';

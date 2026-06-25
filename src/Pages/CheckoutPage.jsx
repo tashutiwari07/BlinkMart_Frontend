@@ -5,7 +5,7 @@ import { MdLocalShipping, MdLockOutline, MdPayment } from 'react-icons/md';
 import useCart from '../hooks/useCart';
 
 const CHECKOUT_STORAGE_KEY = 'blinkit_checkout';
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://blinkmartbackend-production.up.railway.app';
 
 function readStoredUser() {
   try {
